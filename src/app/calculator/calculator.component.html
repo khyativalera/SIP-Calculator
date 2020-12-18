@@ -8,7 +8,7 @@
                 <form [formGroup]="sipCalculatorForm" (ngSubmit)="calculateSIP()">
 
                     <div class="form-group">
-                        <label>Amount</label>
+                        <label>Investment Amount</label>
                         <input type="number" class="form-control" formControlName="amount" [(ngModel)]="amount" id="amount" placeholder="Rs:"/>
                         <span class="text-danger" *ngIf="!sipCalculatorForm.controls.amount.valid && sipCalculatorForm.controls.amount.dirty">
                                 Please provide this field!
@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Duration</label>
+                        <label>Duration of Investment</label>
                         <input type="number" class="form-control" formControlName="durationOfInvestment" [(ngModel)]="durationOfInvestment" id="durationOfInvestment" placeholder="Year"/>
                         
                         <span class="text-danger" *ngIf="!sipCalculatorForm.controls.durationOfInvestment.valid && 
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Rate of return:</label>
+                        <label>Expected Annual Return</label>
                         <input type="number" class="form-control" formControlName="rateOfInterest" [(ngModel)]="rateOfInterest" id="rateOfInterest" placeholder="%"/>
                         
                         <span class="text-danger" *ngIf="!sipCalculatorForm.controls.rateOfInterest.valid && 
