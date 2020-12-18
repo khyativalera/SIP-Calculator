@@ -42,8 +42,5 @@ export class CalculatorComponent implements OnInit {
     this.amountReceived = (this.amount) * Math.pow(1+i, n-1) * ((1+i)/i)
    
     
-  }
-
-
-    
+  }   
 }
