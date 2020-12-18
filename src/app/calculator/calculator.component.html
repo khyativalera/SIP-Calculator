@@ -1,0 +1,44 @@
+<p>calculator works!</p>
+
+<div class="row">
+    <div class="col-md-5 offset-md-4">
+        <div class="card">
+            <div class="card-header bg-primary"> SIP Calculator</div>
+            <div class="card-body">
+                <form [formGroup]="sipCalculatorForm" (ngSubmit)="calculateSIP()">
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" class="form-control" formControlName="amount" [(ngModel)]="amount" id="amount" placeholder="Rs:"/>
+                        <span class="text-danger" *ngIf="!sipCalculatorForm.controls.amount.valid && sipCalculatorForm.controls.amount.dirty">
+                                Please provide this field!
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <input type="number" class="form-control" formControlName="durationOfInvestment" [(ngModel)]="durationOfInvestment" id="durationOfInvestment" placeholder="Year"/>
+                        
+                        <span class="text-danger" *ngIf="!sipCalculatorForm.controls.durationOfInvestment.valid && 
+                        sipCalculatorForm.controls.durationOfInvestment.dirty">Please provide this field!</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rate of return:</label>
+                        <input type="number" class="form-control" formControlName="rateOfInterest" [(ngModel)]="rateOfInterest" id="rateOfInterest" placeholder="%"/>
+                        
+                        <span class="text-danger" *ngIf="!sipCalculatorForm.controls.rateOfInterest.valid && 
+                        sipCalculatorForm.controls.rateOfInterest.dirty">Please provide this field!</span>
+                    </div>
+
+                    <button [disabled]="!sipCalculatorForm.valid" type="submit" class="btn btn-primary">Calculate SIP</button>
+                    <div>
+                        <label>Expected return:</label>
+                        <div class="form-control text-success">{{amountReceived | currency: 'INR'}}</div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
