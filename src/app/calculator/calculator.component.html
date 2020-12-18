@@ -1,7 +1,8 @@
+<div class="container" style="margin: 80px;">
 <div class="row">
     <div class="col-md-5 offset-md-4">
         <div class="card">
-            <div class="card-header bg-primary"> SIP Calculator</div>
+            <div class="card-header bg-primary" style="color: aliceblue;"><h4> SIP Calculator</h4></div>
             <div class="card-body">
                 <form [formGroup]="sipCalculatorForm" (ngSubmit)="calculateSIP()">
 
@@ -29,7 +30,7 @@
                         sipCalculatorForm.controls.rateOfInterest.dirty">Please provide this field!</span>
                     </div>
 
-                    <button [disabled]="!sipCalculatorForm.valid" type="submit" class="btn btn-primary">Calculate SIP</button>
+                    <button [disabled]="!sipCalculatorForm.valid" type="submit" class="btn btn-primary btn-block">Calculate SIP</button> <br>
                     <div>
                         <label>Expected return:</label>
                         <div class="form-control text-success">{{amountReceived | currency: 'INR'}}</div>
@@ -39,4 +40,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
